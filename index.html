@@ -2,13 +2,35 @@
 <html>
 <head>
   <title>(=^_^=)</title>
+  <style>
+    a {
+      color: #fff;
+    }
+  </style>
 </head>
 <body style="background-image: url(space.jpg); text-align: center;">
-  <img src="cat.gif" style="max-height: 100vh">
+  <a href="https://github.com/dpipkin">My GitHub page</a>
   <br>
-  <a href="http://tortilladj.space" style="color: #fff;">tortilladj.space</a>
-  <audio autoplay loop>
+  <img src="cat.gif" style="max-height: 100vh" id="cat">
+  <br>
+  <a href="http://tortilladj.space">tortilladj.space</a>
+  <audio autoplay loop id="sounds">
     <source src="beats.mp3" type="audio/mpeg">
   </audio>
 </body>
+
+<script>
+  var audio = document.getElementById('sounds');
+  var pausePlay = document.getElementById('cat');
+  pausePlay.addEventListener('click', function() {
+    if (audio.currentTime > 0) {
+      console.log("Audio is currently playing.");
+      audio.pause();
+      audio.currentTime = 0;
+    } else {
+      console.log("There is no audio playing.");
+      audio.play();
+    }
+  });
+</script>
 </html>
